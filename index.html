@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洛緹精緻美學 · 價目表</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f4;
+    --warm-white: #f5f0eb;
+    --blush: #e8c4b8;
+    --dusty-rose: #c9967f;
+    --taupe: #8a7060;
+    --brown: #6b4f3a;
+    --dark-brown: #3d2b1f;
+    --sage: #a8b89a;
+    --gold: #b8975a;
+    --gold-light: #d4b278;
+    --text-main: #3d2b1f;
+    --text-muted: #8a7060;
+    --border: #e0d4c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 50px;
+    background: linear-gradient(160deg, #fdf9f6 0%, #f0e8e0 40%, #e8ddd4 100%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(200,150,127,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(168,184,154,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--dark-brown);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .hero-title span { color: var(--dusty-rose); }
+  .hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px auto 0;
+    width: 200px;
+  }
+  .hero-divider::before, .hero-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+  }
+  .hero-divider::before { background: linear-gradient(to right, transparent, var(--dusty-rose)); }
+  .hero-divider::after  { background: linear-gradient(to left,  transparent, var(--dusty-rose)); }
+  .hero-divider-dot {
+    width: 5px; height: 5px;
+    background: var(--dusty-rose);
+    border-radius: 50%;
+  }
+
+  /* Nav — text capsule tabs (like reference) */
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,244,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 18px rgba(61,43,31,0.07);
+  }
+  .nav-scroll { overflow-x: auto; scrollbar-width: none; }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  .nav-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 18px;
+    cursor: pointer;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    transition: all 0.22s ease;
+    outline: none;
+  }
+  .nav-tab:hover { color: var(--dark-brown); }
+  .nav-tab.active {
+    background: var(--dark-brown);
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* Content */
+  .content-area {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  .tab-section { display: none; animation: fadeUp 0.45s ease; }
+  .tab-section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Section headers */
+  .section-header { text-align: center; padding: 48px 0 32px; }
+  .section-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: clamp(20px, 4.5vw, 28px);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--dark-brown);
+  }
+
+  /* Category headers */
+  .cat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 30px 0 16px;
+  }
+  .cat-header-line { flex: 1; height: 1px; background: var(--border); }
+  .cat-header-text {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--taupe);
+    white-space: nowrap;
+  }
+
+  /* Price card wrapper */
+  .price-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .price-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--blush), var(--sage));
+  }
+
+  /* === UNIFIED price list (same style everywhere) === */
+  .price-list { display: flex; flex-direction: column; gap: 7px; }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: var(--warm-white);
+    border-radius: 4px;
+  }
+  .price-row-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-main);
+    letter-spacing: 0.05em;
+  }
+  .price-row-label.accent { color: var(--dusty-rose); }
+  .price-row-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--dusty-rose);
+    font-weight: 700;
+  }
+
+  /* Grid for many small items (face / limbs) */
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 7px;
+  }
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 13px;
+    background: var(--warm-white);
+    border-radius: 4px;
+  }
+  .price-label {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    color: var(--text-main);
+    letter-spacing: 0.04em;
+  }
+  .price-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--dusty-rose);
+    font-weight: 700;
+  }
+
+  /* Premium cards */
+  .premium-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 26px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .premium-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blush), var(--gold-light), var(--sage));
+  }
+  .premium-name {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--dark-brown);
+    margin-bottom: 6px;
+  }
+  .premium-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--dusty-rose);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .premium-desc {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+  }
+
+  /* Package cards */
+  .package-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 22px;
+    margin-bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+  .package-name {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--dark-brown);
+  }
+  .package-sessions {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+  .package-prices { text-align: right; }
+  .package-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--dusty-rose);
+    font-weight: 700;
+  }
+  .package-original {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    margin-top: 2px;
+  }
+
+  /* Notice */
+  .notice {
+    background: linear-gradient(135deg, rgba(232,196,184,0.17), rgba(168,184,154,0.11));
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 2;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .notice-highlight { color: var(--dusty-rose); font-weight: 700; }
+
+  /* Discount badges */
+  .discount-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .discount-badge {
+    padding: 4px 11px;
+    background: rgba(201,150,127,0.1);
+    border: 1px solid rgba(201,150,127,0.28);
+    border-radius: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    color: var(--dusty-rose);
+    letter-spacing: 0.05em;
+  }
+
+  /* Two column */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* Collagen tiers */
+  .collagen-tier { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 16px 0; }
+  .collagen-item {
+    text-align: center;
+    padding: 18px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: white;
+    transition: background 0.2s;
+  }
+  .collagen-item:hover { background: var(--warm-white); }
+  .collagen-shots {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .collagen-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark-brown);
+  }
+  .collagen-note {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 10px;
+    color: var(--dusty-rose);
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 560px) {
+    .two-col { grid-template-columns: 1fr; }
+    .price-grid { grid-template-columns: 1fr 1fr; }
+    .collagen-tier { grid-template-columns: 1fr; }
+    .nav-tab { min-width: 54px; padding: 7px 9px 8px; }
+    .nav-tab-icon { font-size: 16px; }
+    .nav-tab-label { font-size: 10px; }
+    .package-card { flex-direction: column; align-items: flex-start; }
+    .package-prices { text-align: left; }
+  }
+
+  /* Booking buttons */
+  .hero-book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 12px 28px;
+    background: var(--dark-brown);
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(61,43,31,0.2);
+  }
+  .hero-book-btn:hover { background: var(--brown); transform: translateY(-1px); }
+
+  .float-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: var(--dusty-rose);
+    color: #fff;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(201,150,127,0.45);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .float-btn:hover { background: var(--brown); transform: translateY(-2px); }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 26px 20px;
+    border-top: 1px solid var(--border);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    background: var(--warm-white);
+  }
+  .footer-brand {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dusty-rose);
+    letter-spacing: 0.2em;
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-tagline">Beauty · Eyelash · Wax · Skin</p>
+  <h1 class="hero-title"><span>洛緹</span>精緻美學</h1>
+  <p class="hero-subtitle">完整服務價目表</p>
+  <div class="hero-divider"><div class="hero-divider-dot"></div></div>
+  <a href="https://lin.ee/y3KAPST" target="_blank" class="hero-book-btn">✦ 立即預約</a>
+</div>
+
+<!-- Floating booking button -->
+<a href="https://lin.ee/y3KAPST" target="_blank" class="float-btn">✦ 立即預約</a>
+
+<!-- Navigation -->
+<div class="nav-wrapper">
+  <div class="nav-scroll">
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showTab('eyelash',this)">美睫</button>
+      <button class="nav-tab" onclick="showTab('skin-kr',this)">韓國皮膚管理</button>
+      <button class="nav-tab" onclick="showTab('skin-hi',this)">CIVASAN高端皮膚管理</button>
+      <button class="nav-tab" onclick="showTab('collagen',this)">膠原提升</button>
+      <button class="nav-tab" onclick="showTab('hotwax',this)">熱蠟美肌</button>
+      <button class="nav-tab" onclick="showTab('jpwax',this)">日式除毛</button>
+      <button class="nav-tab" onclick="showTab('jpwax-pkg',this)">日式除毛包堂</button>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content-area">
+
+  <!-- 美睫 -->
+  <div id="eyelash" class="tab-section active">
+    <div class="section-header">
+      <p class="section-en">Eyelash Extension</p>
+      <h2 class="section-title">美　睫　價　目　表</h2>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">經典日式單根</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-list">
+        <div class="price-row"><span class="price-row-label">100 根</span><span class="price-row-value">$1,000</span></div>
+        <div class="price-row"><span class="price-row-label">120 根</span><span class="price-row-value">$1,200</span></div>
+        <div class="price-row"><span class="price-row-label">150 根</span><span class="price-row-value">$1,500</span></div>
+        <div class="price-row"><span class="price-row-label">180 根</span><span class="price-row-value">$1,800</span></div>
+        <div class="price-row"><span class="price-row-label">200 根</span><span class="price-row-value">$2,000</span></div>
+      </div>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">6D 蓬鬆多根</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-list">
+        <div class="price-row"><span class="price-row-label">300 根</span><span class="price-row-value">$1,300</span></div>
+        <div class="price-row"><span class="price-row-label">500 根</span><span class="price-row-value">$1,600</span></div>
+        <div class="price-row"><span class="price-row-label">700 根</span><span class="price-row-value">$1,900</span></div>
+        <div class="price-row"><span class="price-row-label">900 根</span><span class="price-row-value">$2,200</span></div>
+        <div class="price-row"><span class="price-row-label accent">+100根 加收</span><span class="price-row-value">$150</span></div>
+      </div>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">經典山茶花</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-list">
+        <div class="price-row"><span class="price-row-label">400 根</span><span class="price-row-value">$1,500</span></div>
+        <div class="price-row"><span class="price-row-label">600 根</span><span class="price-row-value">$1,800</span></div>
+        <div class="price-row"><span class="price-row-label">800 根</span><span class="price-row-value">$2,200</span></div>
+        <div class="price-row"><span class="price-row-label">1000 根</span><span class="price-row-value">$2,500</span></div>
+        <div class="price-row"><span class="price-row-label accent">+100根 加收</span><span class="price-row-value">$200</span></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">加購專區</span><div class="cat-header-line"></div></div>
+        <div class="price-card">
+          <div class="price-list">
+            <div class="price-row"><span class="price-row-label">下睫毛 自然款</span><span class="price-row-value">$400</span></div>
+            <div class="price-row"><span class="price-row-label">下睫毛 濃密款</span><span class="price-row-value">$500</span></div>
+            <div class="price-row"><span class="price-row-label">下睫毛 設計款</span><span class="price-row-value">$700</span></div>
+            <div class="price-row"><span class="price-row-label">彩睫 點綴款</span><span class="price-row-value">$200</span></div>
+            <div class="price-row"><span class="price-row-label">彩睫 顯色款</span><span class="price-row-value">$400</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">回補方案</span><div class="cat-header-line"></div></div>
+        <div class="price-card">
+          <div class="price-list">
+            <div class="price-row"><span class="price-row-label">兩週內</span><span class="price-row-value">$600</span></div>
+            <div class="price-row"><span class="price-row-label">三週內</span><span class="price-row-value">$700</span></div>
+            <div class="price-row"><span class="price-row-label">四週內</span><span class="price-row-value">$800</span></div>
+            <div class="price-row"><span class="price-row-label">五週內</span><span class="price-row-value">$900</span></div>
+          </div>
+          <p style="font-size:11px;color:var(--dusty-rose);margin-top:10px;letter-spacing:0.04em;">※ 掉落60%以上需卸除</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">睫毛管理</span><div class="cat-header-line"></div></div>
+        <div class="price-card">
+          <div class="price-list">
+            <div class="price-row"><span class="price-row-label">平復管理</span><span class="price-row-value">$800</span></div>
+            <div class="price-row"><span class="price-row-label">上睫管理</span><span class="price-row-value">$1,500</span></div>
+            <div class="price-row"><span class="price-row-label">下睫管理</span><span class="price-row-value">$900</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">卸除專區</span><div class="cat-header-line"></div></div>
+        <div class="price-card">
+          <div class="price-list">
+            <div class="price-row"><span class="price-row-label">本店接睫・卸除重接</span><span class="price-row-value">$0</span></div>
+            <div class="price-row"><span class="price-row-label">本店接睫・卸除不接</span><span class="price-row-value">$200</span></div>
+            <div class="price-row"><span class="price-row-label">他店接睫・卸除重接</span><span class="price-row-value">$200</span></div>
+            <div class="price-row"><span class="price-row-label">他店接睫・卸除不接</span><span class="price-row-value">$400</span></div>
+            <div class="price-row"><span class="price-row-label">種植式卸除</span><span class="price-row-value">$500</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 日式除毛 -->
+  <div id="jpwax" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">Japanese Hair Removal</p>
+      <h2 class="section-title">日式除毛價目表</h2>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">四肢 LIMBS</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-grid">
+        <div class="price-item"><span class="price-label">腋下</span><span class="price-value">$700</span></div>
+        <div class="price-item"><span class="price-label">前臂</span><span class="price-value">$800</span></div>
+        <div class="price-item"><span class="price-label">全臂</span><span class="price-value">$1,800</span></div>
+        <div class="price-item"><span class="price-label">小腿</span><span class="price-value">$1,200</span></div>
+        <div class="price-item"><span class="price-label">全腿</span><span class="price-value">$2,200</span></div>
+      </div>
+      <div class="discount-row">
+        <span class="discount-badge">30日回除 9折</span>
+        <span class="discount-badge">雙手法 9折</span>
+      </div>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">私密處 PRIVATE PARTS</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-grid">
+        <div class="price-item"><span class="price-label">比基尼</span><span class="price-value">$1,500</span></div>
+        <div class="price-item"><span class="price-label">VI 巴西式</span><span class="price-value">$2,200</span></div>
+      </div>
+      <div class="discount-row">
+        <span class="discount-badge">9折驗優惠</span>
+        <span class="discount-badge">30日回除 8.5折</span>
+        <span class="discount-badge">雙手法 8折</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 光學包堂 -->
+  <div id="jpwax-pkg" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">Hair Removal Package</p>
+      <h2 class="section-title">包　堂　方　案</h2>
+    </div>
+    <div class="notice">
+      <span class="notice-highlight">限本人使用</span>　｜　<span class="notice-highlight">12個月內用畢</span>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">6 堂課程方案</span><div class="cat-header-line"></div></div>
+
+    <div class="package-card">
+      <div><div class="package-name">腋下</div><div class="package-sessions">6 堂課程</div></div>
+      <div class="package-prices"><div class="package-price">$3,000</div><div class="package-original">原價 $4,200</div></div>
+    </div>
+    <div class="package-card">
+      <div><div class="package-name">全臂</div><div class="package-sessions">6 堂課程</div></div>
+      <div class="package-prices"><div class="package-price">$8,000</div><div class="package-original">原價 $10,800</div></div>
+    </div>
+    <div class="package-card">
+      <div><div class="package-name">小腿</div><div class="package-sessions">6 堂課程</div></div>
+      <div class="package-prices"><div class="package-price">$6,000</div><div class="package-original">原價 $7,200</div></div>
+    </div>
+    <div class="package-card">
+      <div><div class="package-name">全腿</div><div class="package-sessions">6 堂課程</div></div>
+      <div class="package-prices"><div class="package-price">$10,800</div><div class="package-original">原價 $13,200</div></div>
+    </div>
+    <div class="package-card">
+      <div><div class="package-name">巴西式</div><div class="package-sessions">6 堂課程</div></div>
+      <div class="package-prices"><div class="package-price">$10,800</div><div class="package-original">原價 $13,200</div></div>
+    </div>
+  </div>
+
+  <!-- 熱蠟除毛 -->
+  <div id="hotwax" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">Hot Wax Hair Removal</p>
+      <h2 class="section-title">熱　蠟　價　目　表</h2>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">臉部 FACE</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-grid">
+        <div class="price-item"><span class="price-label">上唇</span><span class="price-value">$400</span></div>
+        <div class="price-item"><span class="price-label">下唇</span><span class="price-value">$400</span></div>
+        <div class="price-item"><span class="price-label">眉毛</span><span class="price-value">$600</span></div>
+        <div class="price-item"><span class="price-label">全臉</span><span class="price-value">$1,500</span></div>
+        <div class="price-item"><span class="price-label">髮際線</span><span class="price-value">$600</span></div>
+      </div>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">四肢 LIMBS</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-grid">
+        <div class="price-item"><span class="price-label">手指</span><span class="price-value">$250</span></div>
+        <div class="price-item"><span class="price-label">腳指</span><span class="price-value">$250</span></div>
+        <div class="price-item"><span class="price-label">腋下</span><span class="price-value">$600</span></div>
+        <div class="price-item"><span class="price-label">前臂</span><span class="price-value">$800</span></div>
+        <div class="price-item"><span class="price-label">全臂</span><span class="price-value">$1,500</span></div>
+        <div class="price-item"><span class="price-label">小腿</span><span class="price-value">$1,200</span></div>
+        <div class="price-item"><span class="price-label">全腿</span><span class="price-value">$2,000</span></div>
+      </div>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">私密處 PRIVATE PARTS</span><div class="cat-header-line"></div></div>
+    <div class="price-card">
+      <div class="price-grid">
+        <div class="price-item"><span class="price-label">基礎比基尼</span><span class="price-value">$1,500</span></div>
+        <div class="price-item"><span class="price-label">法式比基尼</span><span class="price-value">$2,500</span></div>
+        <div class="price-item"><span class="price-label">巴西式全除</span><span class="price-value">$2,500</span></div>
+        <div class="price-item"><span class="price-label">造型式除毛</span><span class="price-value">$3,000</span></div>
+      </div>
+      <div class="discount-row">
+        <span class="discount-badge">四週內回除 8折</span>
+        <span class="discount-badge">六週內回除 8.5折</span>
+        <span class="discount-badge">孕媽咪巴西式全除 8折</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 韓國皮膚管理 -->
+  <div id="skin-kr" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">Korean Skin Management</p>
+      <h2 class="section-title">韓　國　皮　膚　管　理</h2>
+    </div>
+    <div class="notice" style="text-align:left;line-height:1.9;">
+      <strong style="color:var(--text-muted);">根據醫學認知皮膚結構 針對當下皮膚狀態<br>
+      分析及客戶需求 客製化進行管理</strong><br><br>
+      使用韓國知名品牌 <span class="notice-highlight">伊安秀</span>，主打全系列產品主打含 <span class="notice-highlight">β-葡聚糖（β-Glucan）</span>，能有效提升肌膚免疫力、修復敏感，適用於各種痘痘肌與問題肌。<br>
+      在韓國被超過 8,000 家皮膚科與美容醫院作為管理產品使用，深受專家認可。
+    </div>
+
+    <div class="premium-card">
+      <div class="premium-name">基礎管理</div>
+      <div class="premium-price">$2,000</div>
+      <div class="premium-desc">
+        毛孔清潔 讓肌膚深度呼吸<br>
+        適合想要維持、穩定膚況的顧客
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">加強管理</div>
+      <div class="premium-price">$2,500</div>
+      <div class="premium-desc">
+        適合所有皮膚狀況需要改善<br>
+        或是想讓皮膚狀態更好的顧客
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-size:10px;letter-spacing:0.15em;color:var(--gold);margin-bottom:7px;">▸ 導入選擇</div>
+        <div class="discount-row">
+          <span class="discount-badge">美白提亮</span><span class="discount-badge">抗痘鎖定</span>
+          <span class="discount-badge">修復屏障</span><span class="discount-badge">保濕鎖水</span>
+          <span class="discount-badge">高敏舒緩</span><span class="discount-badge">P肽抗衰</span>
+        </div>
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">MTS 進階管理</div>
+      <div class="premium-price">$3,200</div>
+      <div class="premium-desc">
+        在肌膚表面做出大量通道<br>
+        讓保養成分快速直達基底<br>
+        啟動皮膚的自癒力 增強肌膚的吸收力<br>
+        適合所有膚況、想改善毛孔粗大的顧客
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-size:10px;letter-spacing:0.15em;color:var(--gold);margin-bottom:7px;">▸ 導入選擇</div>
+        <div class="discount-row">
+          <span class="discount-badge">美白提亮</span><span class="discount-badge">抗痘鎖定</span>
+          <span class="discount-badge">修復屏障</span><span class="discount-badge">保濕鎖水</span>
+          <span class="discount-badge">高敏舒緩</span><span class="discount-badge">P肽抗衰</span>
+        </div>
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">STS 雷電波管理</div>
+      <div class="premium-price">$3,200</div>
+      <div class="premium-desc">
+        採用無針式的穿孔技術以不損傷肌膚為原則<br>
+        匯集219個獨家專利技術<br>
+        使皮膚吸收度上升200%以上<br>
+        針對不同膚況進行調節綠、藍、紅光<br>
+        對應肌膚狀況進行有效改善<br>
+        無痛、無針、無修復期<br><br>
+        適合所有膚況的顧客
+      </div>
+      <div style="margin-top:12px;">
+        <div style="font-size:10px;letter-spacing:0.15em;color:var(--gold);margin-bottom:7px;">▸ 導入選擇</div>
+        <div class="discount-row">
+          <span class="discount-badge">美白提亮</span><span class="discount-badge">抗痘鎖定</span>
+          <span class="discount-badge">修復屏障</span><span class="discount-badge">保濕鎖水</span>
+          <span class="discount-badge">高敏舒緩</span><span class="discount-badge">P肽抗衰</span>
+        </div>
+      </div>
+    </div>
+    <div class="notice">
+      管理流程皆包含：角質調理｜水飛梭 or 超聲波鏟版｜手工粉刺｜光譜儀修護｜面膜 or 軟膜<br><br>
+      <span class="notice-highlight">全項管理首次體驗享9折　｜　一個月內回顧享95折</span>
+    </div>
+  </div>
+
+  <!-- 高端皮膚管理 -->
+  <div id="skin-hi" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">CIVASAN Premium Skin Management</p>
+      <h2 class="section-title">CIVASAN 高端皮膚管理</h2>
+    </div>
+    <div class="notice" style="text-align:left;line-height:1.9;">
+      使用韓國知名院線品牌 <span class="notice-highlight">CIVASAN 詩瓦珊</span><br>
+      在韓國擁有 2000+ 家皮膚管理機構及美容院線<br>
+      是介於「保養品」＋「醫療輔助」之間的等級<br><br>
+      產品由專門醫療院線研發，研發對象為傷燙傷患者<br>
+      主打肌膚修護 ＋ 屏障重建 ＋ 問題肌膚改善
+    </div>
+
+    <div class="premium-card">
+      <div class="premium-name">水光淨透高端管理</div>
+      <div class="premium-price">$4,000</div>
+      <div class="premium-desc">
+        水孔蛋白激活技術 營養直達基底<br>
+        長效補水達130小時 注入水分同時補充膠原白<br><br>
+        特別適合：嚴重乾肌・缺水肌・老化肌・受損肌
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">時光蛋白管理</div>
+      <div class="premium-price">$4,200</div>
+      <div class="premium-desc">
+        透過PTD蛋白質傳達系統<br>
+        修復強韌肌膚屏障<br>
+        提升肌膚彈性 改善細紋<br><br>
+        特別適合：敏感肌・炎症肌・雷射術後修復肌膚
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">維C彈嫩管理</div>
+      <div class="premium-price">$4,200</div>
+      <div class="premium-desc">
+        英國100%純制維C搭配膠原蛋白<br>
+        改善暗沉色斑豆印<br>
+        預防色素沉澱 同時具有抗氧化<br>
+        抗衰老 改善皺紋效果<br><br>
+        每種肌膚皆適用
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">海綿骨針管理</div>
+      <div class="premium-price">$4,500</div>
+      <div class="premium-desc">
+        據肌膚類型 搭配2種骨針進行<br>
+        在72小時內持續激活細胞<br>
+        促進營養成分滲透<br>
+        幫助肌膚再生 膠原蛋白增生<br><br>
+        適合肌膚：油肌・痘痘肌
+      </div>
+    </div>
+    <div class="premium-card">
+      <div class="premium-name">光韻逆齡管理</div>
+      <div class="premium-price">$5,000</div>
+      <div class="premium-desc">
+        韓國VIP級別美容院 才能使用的貴婦套盒<br>
+        4%穀光甘肽搭配視黃醇<br>
+        有效提亮膚色 抗氧抗老緊緻<br>
+        輕鬆打造逆齡透亮肌<br><br>
+        特別適合：想要美白、抗衰、輕熟齡肌膚
+      </div>
+    </div>
+    <div class="notice">
+      管理流程皆包含：角質調理｜水飛梭 or 超聲波鏟版｜手工粉刺｜光譜儀修護｜軟膜｜韓國進口儀器導入
+    </div>
+  </div>
+
+  <!-- 膠原提升 -->
+  <div id="collagen" class="tab-section">
+    <div class="section-header">
+      <p class="section-en">Collagen Boost · Para-Medical</p>
+      <h2 class="section-title">類　醫　美　保　養</h2>
+    </div>
+
+    <div class="cat-header"><div class="cat-header-line"></div><span class="cat-header-text">膠原提升</span><div class="cat-header-line"></div></div>
+
+    <div class="price-card" style="text-align:center;padding:26px 22px 22px;">
+      <p style="font-size:13px;color:var(--text-muted);line-height:2.1;letter-spacing:0.05em;margin-bottom:22px;">
+        通過刺激真皮層　促進膠原蛋白再生<br>
+        提升皮膚彈性及增加肌膚飽滿度<br>
+        改善面部輪廓及皺紋　通過再生效果　實現美白肌膚
+      </p>
+      <div class="collagen-tier">
+        <div class="collagen-item">
+          <div class="collagen-shots">400 發</div>
+          <div class="collagen-price">$3,280</div>
+          <div class="collagen-note">局部施做<br>（下半臉、脖子）</div>
+        </div>
+        <div class="collagen-item">
+          <div class="collagen-shots">600 發</div>
+          <div class="collagen-price">$4,280</div>
+          <div class="collagen-note">全臉施做<br>（建議搭配管理課程）</div>
+        </div>
+        <div class="collagen-item">
+          <div class="collagen-shots">800 發</div>
+          <div class="collagen-price">$5,280</div>
+          <div class="collagen-note">全臉施做<br>（單一項目時首選）</div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:var(--dusty-rose);margin-top:14px;letter-spacing:0.05em;">超過800發　1發 $5</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">洛緹精緻美學</div>
+  <p>EYELASH · HAIR REMOVAL · SKIN CARE</p>
+</footer>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
